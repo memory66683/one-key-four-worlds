@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>One Key, Four Worlds · 演讲稿（语速 / 停顿 / 重音标注）</title>
+<meta name="description" content="英文演讲稿 · 语速 / 停顿 / 重音标注 · 5 分钟计时">
+<meta name="theme-color" content="#12110f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="一键四世界">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<style>
+  :root{
+    --paper:#fbf7ee;
+    --ink:#1d1a16;
+    --muted:#7d7468;
+    --line:#e2d6c2;
+    --brass:#9a6b3f;
+    --stress:#9b2c2c;
+    --pause:#b3a795;
+    --rise:#2f5d7c;
+    --fall:#6b4a7a;
+    --speed:#3f6b4f;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#e9e2d4;
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman","Songti SC","PingFang SC",serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .toolbar{
+    position:sticky;top:0;z-index:20;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:10px 22px;
+    background:rgba(18,17,15,.94);
+    color:#eee5d6;
+    font-family:Arial,"PingFang SC",sans-serif;
+    font-size:12px;
+    backdrop-filter:blur(8px);
+  }
+  .brand{letter-spacing:.18em;font-size:10px;color:#c69a5e;white-space:nowrap;}
+  .tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+  button{
+    background:transparent;border:1px solid #6b5a45;color:#eee5d6;
+    padding:6px 10px;border-radius:4px;cursor:pointer;
+    font-family:Arial,"PingFang SC",sans-serif;font-size:11px;letter-spacing:.02em;
+  }
+  button:hover{border-color:#c69a5e;color:#fff;}
+  #clock{
+    min-width:52px;text-align:center;color:#c69a5e;
+    font-variant-numeric:tabular-nums;letter-spacing:.08em;font-size:13px;
+  }
+  .sheet{
+    max-width:980px;margin:28px auto 60px;background:var(--paper);
+    padding:56px 64px 64px;box-shadow:0 18px 50px rgba(40,30,15,.16);
+  }
+  header{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:26px;}
+  .kicker{
+    font-family:Arial,"PingFang SC",sans-serif;font-size:10px;letter-spacing:.2em;
+    color:var(--brass);text-transform:uppercase;margin:0 0 14px;
+  }
+  h1{font-size:64px;line-height:.95;letter-spacing:-.02em;margin:0 0 14px;font-weight:400;}
+  .sub{font-size:15px;color:var(--muted);margin:0 0 20px;font-style:italic;}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;font-family:Arial,"PingFang SC",sans-serif;font-size:11px;color:var(--muted);}
+  .meta b{color:var(--ink);font-size:14px;margin-right:3px;}
+  h2{font-size:20px;font-weight:400;margin:0;}
+  h3{font-family:Arial,"PingFang SC",sans-serif;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;margin:0 0 12px;}
+  section{margin:0 0 30px;}
+  p{margin:0 0 10px;}
+  .legend{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:8px 26px;
+    background:#fffdf6;border:1px solid var(--line);padding:18px 20px;
+    font-family:Arial,"PingFang SC",sans-serif;font-size:12px;color:#4a443b;
+  }
+  .legend div{display:flex;gap:10px;align-items:baseline;}
+  .lg{display:inline-block;min-width:34px;text-align:center;font-weight:700;}
+  .p{color:var(--pause);font-weight:400;padding:0 2px;}
+  .pp{color:var(--pause);font-weight:400;padding:0 4px;}
+  .rise{color:var(--rise);font-family:Arial,sans-serif;}
+  .fall{color:var(--fall);font-family:Arial,sans-serif;}
+  .tag{
+    font-family:Arial,"PingFang SC",sans-serif;font-size:9px;letter-spacing:.12em;
+    color:var(--speed);border:1px solid #c9d6c9;background:#f3f8f2;
+    padding:1px 5px;border-radius:3px;white-space:nowrap;
+  }
+  b{color:var(--stress);font-weight:700;}
+
+  .words{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .word{border:1px solid var(--line);background:#fffdf6;padding:15px 17px;}
+  .w-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:3px;}
+  .w{font-size:19px;color:var(--ink);}
+  .ipa{font-family:Arial,sans-serif;font-size:11px;color:var(--muted);white-space:nowrap;}
+  .pos{font-family:Arial,"PingFang SC",sans-serif;font-size:11px;color:var(--brass);margin-bottom:7px;}
+  .word p{font-family:Arial,"PingFang SC",sans-serif;font-size:11.5px;line-height:1.55;color:#4a443b;margin:0 0 6px;}
+  .word .eg{color:var(--muted);font-style:italic;}
+
+  table{width:100%;border-collapse:collapse;font-family:Arial,"PingFang SC",sans-serif;font-size:11.5px;}
+  th{text-align:left;color:var(--brass);font-weight:400;letter-spacing:.08em;font-size:9.5px;
+     border-bottom:1px solid #d8cbb6;padding:8px 6px;text-transform:uppercase;}
+  td{border-bottom:1px solid #eee6d8;padding:8px 6px;vertical-align:top;color:#3c372f;}
+  td.t{white-space:nowrap;color:var(--muted);}
+  .map td:first-child{color:var(--brass);}
+
+  .beat{border-top:1px solid var(--line);padding-top:18px;margin-top:32px;}
+  .beat-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;}
+  .no{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.16em;color:var(--brass);}
+  .time{margin-left:auto;font-family:Arial,sans-serif;font-size:10.5px;color:var(--muted);white-space:nowrap;}
+  .line{font-size:19px;line-height:1.85;margin:0 0 4px;}
+  .note{
+    font-family:Arial,"PingFang SC",sans-serif;font-size:11px;line-height:1.6;
+    color:var(--muted);margin:8px 0 18px;padding-left:2px;
+  }
+  .note::before{content:"▸ ";color:var(--brass);}
+
+  .box{background:#fffdf6;border:1px solid var(--line);padding:18px 20px;}
+  .box ol{margin:0;padding-left:20px;font-family:Arial,"PingFang SC",sans-serif;font-size:12px;line-height:1.8;color:#3c372f;}
+  .box li{margin-bottom:4px;}
+  .qa p{font-family:Arial,"PingFang SC",sans-serif;font-size:12px;line-height:1.7;color:#3c372f;margin:0 0 12px;}
+  .qa strong{color:var(--ink);}
+  .qa em{color:var(--muted);}
+
+  footer{border-top:1px solid var(--line);margin-top:36px;padding-top:14px;
+         font-family:Arial,"PingFang SC",sans-serif;font-size:10px;color:var(--muted);
+         display:flex;justify-content:space-between;gap:20px;}
+
+  body.clean .p,body.clean .pp,body.clean .rise,body.clean .fall,
+  body.clean .note{display:none;}
+  body.clean .line{margin-bottom:2px;}
+
+
+  /* ---- motion ---- */
+  #scrollbar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--brass);z-index:50;transition:width .08s linear;}
+  .timerwrap{display:flex;flex-direction:column;align-items:center;gap:4px;}
+  #timebar{width:64px;height:2px;background:#3a332a;border-radius:1px;overflow:hidden;}
+  #timeFill{display:block;height:100%;width:100%;background:var(--brass);transition:width 1s linear,background .3s;}
+  .word{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+  .word:hover{transform:translateY(-3px);border-color:#c9a06e;box-shadow:0 10px 24px rgba(90,60,20,.10);}
+  button{transition:border-color .2s,color .2s,background .2s,transform .1s;}
+  button:active{transform:translateY(1px);}
+  .line{transition:background .18s ease;border-radius:2px;}
+  .line:hover{background:rgba(198,154,94,.09);}
+  .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  .js body{animation:pageIn .45s ease both;}
+  @keyframes pageIn{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion: reduce){
+    .js .reveal{opacity:1;transform:none;transition:none;}
+    .js body{animation:none;}
+    #scrollbar,#timeFill{transition:none;}
+  }
+
+  @media (max-width:760px){
+    .sheet{padding:32px 22px;margin:0;}
+    h1{font-size:46px;}
+    .words{grid-template-columns:1fr;}
+    .legend{grid-template-columns:1fr;}
+    .line{font-size:17px;}
+    .toolbar{align-items:flex-start;}
+  }
+  @media print{
+    @page{size:A4;margin:14mm;}
+    body{background:#fff;}
+    .toolbar{display:none;}
+    #scrollbar,.timerwrap{display:none;}
+    .js .reveal{opacity:1;transform:none;}
+    .sheet{box-shadow:none;margin:0;max-width:none;padding:0;background:#fff;}
+    .beat{break-inside:avoid;}
+    .word,.box,table{break-inside:avoid;}
+    h1{font-size:48px;}
+    .line{font-size:16px;line-height:1.75;}
+  }
+
+  /* ---- installed app (PWA) ---- */
+  html{background:#12110f;-webkit-text-size-adjust:100%;}
+  body{overscroll-behavior-y:none;}
+  .toolbar{
+    padding-top:calc(10px + env(safe-area-inset-top));
+    padding-left:calc(22px + env(safe-area-inset-left));
+    padding-right:calc(22px + env(safe-area-inset-right));
+  }
+  .toolbar button{
+    -webkit-touch-callout:none;touch-action:manipulation;
+    -webkit-user-select:none;user-select:none;
+  }
+  #scrollbar{top:env(safe-area-inset-top);}
+  .sheet{margin-bottom:calc(60px + env(safe-area-inset-bottom));}
+  @media (display-mode:standalone){
+    #printBtn{display:none;}
+    a,button{-webkit-tap-highlight-color:transparent;}
+  }
+  /* narrow phones: single compact toolbar row */
+  @media (max-width:480px){
+    .toolbar{padding-left:calc(14px + env(safe-area-inset-left));padding-right:calc(14px + env(safe-area-inset-right));gap:8px;}
+    .brand{display:none;}
+    .tools{flex:1;justify-content:space-between;gap:6px;}
+    #printBtn{display:none;}
+    button{padding:6px 8px;font-size:10.5px;}
+    #clock{min-width:44px;font-size:12px;}
+    #timebar{width:52px;}
+    .sheet{padding:26px 18px;margin-top:0;}
+    h1{font-size:42px;}
+    .line{font-size:17.5px;line-height:1.8;}
+    .beat-head{flex-wrap:wrap;gap:8px;}
+    .time{margin-left:0;}
+    table{font-size:10.5px;}
+    th{font-size:8.5px;}
+    td,th{padding:7px 4px;}
+  }
+</style>
+</head>
+<body>
+<div id="scrollbar"></div>
+
+<div class="toolbar">
+  <div class="brand">ONE KEY, FOUR WORLDS · SCRIPT</div>
+  <div class="tools">
+    <button id="timerBtn">▶ 5:00 计时</button>
+    <div class="timerwrap">
+      <span id="clock">5:00</span>
+      <div id="timebar"><i id="timeFill"></i></div>
+    </div>
+    <button id="resetBtn">重置</button>
+    <button id="toggleBtn">隐藏标注</button>
+    <button id="printBtn" onclick="window.print()">打印 / PDF</button>
+  </div>
+</div>
+
+<main class="sheet">
+
+  <header>
+    <p class="kicker">In-class presentation · Ma Mingyu</p>
+    <h1>One Key,<br>Four Worlds.</h1>
+    <p class="sub">英文演讲稿 · 语速 / 停顿 / 重音标注版</p>
+        <div class="meta">
+      <span><b>~4:10</b> 讲话</span>
+      <span><b>+0:50</b> 视频</span>
+      <span><b>~5:00</b> 总计</span>
+      <span><b id="wc">~476</b> 词</span>
+      <span><b>6</b> 个关键词</span>
+    </div>
+  </header>
+
+  <section>
+    <h3>How to read the marks · 符号说明</h3>
+    <div class="legend">
+      <div><span class="lg p">/</span><span>短停 <b style="color:#4a443b">半拍</b>，呼吸一下</span></div>
+      <div><span class="lg pp">//</span><span>长停 <b style="color:#4a443b">一拍</b>，看观众</span></div>
+      <div><span class="lg"><b style="font-size:15px">bold</b></span><span>重读：稍微加长、加重，不要喊</span></div>
+      <div><span class="lg rise">↗</span><span>句尾上扬，像在问问题</span></div>
+      <div><span class="lg fall">↘</span><span>句尾下降，落地、确定</span></div>
+      <div><span class="lg tag">slow</span><span>这一段放慢，比平时慢 20%</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>6 words to know · 六个词就够</h3>
+    <div class="words">
+      <div class="word">
+        <div class="w-top"><span class="w">percussion</span><span class="ipa">/pərˈkʌʃən/</span></div>
+        <div class="pos">n. 打击乐器</div>
+        <p>Instruments you hit to make a sound — like drums. The piano counts, because a hammer hits the strings.</p>
+        <p class="eg">“The piano is a percussion instrument.”</p>
+      </div>
+      <div class="word">
+        <div class="w-top"><span class="w">improviser</span><span class="ipa">/ˈɪmprəvaɪzər/</span></div>
+        <div class="pos">n. 即兴演奏者</div>
+        <p>Someone who makes up music while playing, without a written score.</p>
+        <p class="eg">“He was famous as an improviser.”</p>
+      </div>
+      <div class="word">
+        <div class="w-top"><span class="w">composer</span><span class="ipa">/kəmˈpoʊzər/</span></div>
+        <div class="pos">n. 作曲家</div>
+        <p>A person who writes music.</p>
+        <p class="eg">“Before he was famous as a composer…”</p>
+      </div>
+      <div class="word">
+        <div class="w-top"><span class="w">tempo</span><span class="ipa">/ˈtempoʊ/</span></div>
+        <div class="pos">n. 速度</div>
+        <p>How fast or slow the music goes.</p>
+        <p class="eg">“Her tempo can change in a second.”</p>
+      </div>
+      <div class="word">
+        <div class="w-top"><span class="w">precision</span><span class="ipa">/prɪˈsɪʒən/</span></div>
+        <div class="pos">n. 精确</div>
+        <p>Doing something exactly right, with no mistakes.</p>
+        <p class="eg">“The key is precision.”</p>
+      </div>
+      <div class="word">
+        <div class="w-top"><span class="w">underrated</span><span class="ipa">/ˌʌndərˈreɪtɪd/</span></div>
+        <div class="pos">adj. 被低估的</div>
+        <p>Not valued as much as you should be.</p>
+        <p class="eg">“I think he is underrated.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Delivery map · 语速与情绪</h3>
+    <table class="map">
+      <thead>
+        <tr><th>#</th><th>Section</th><th>Speech time</th><th>Speed</th><th>Volume</th><th>Feeling</th><th>Body</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td>Opening</td><td class="t">0:00–0:18</td><td>中速</td><td>中</td><td>友好、留一点悬念</td><td>站定，看观众</td></tr>
+        <tr><td>02</td><td>The instrument</td><td class="t">0:18–0:55</td><td>慢 → 中</td><td>中</td><td>好奇</td><td>指屏幕；视频时退半步</td></tr>
+        <tr><td>03</td><td>Beethoven</td><td class="t">0:55–1:30</td><td>中慢</td><td>强</td><td>有力、克制</td><td>短促手势；不挥拳</td></tr>
+        <tr><td>04</td><td>Argerich</td><td class="t">1:30–2:05</td><td>中 → 快 → 慢</td><td>中强</td><td>自由、危险</td><td>手随节奏流动</td></tr>
+        <tr><td>05</td><td>Lang Lang</td><td class="t">2:05–2:40</td><td>中快</td><td>中强</td><td>戏剧化、轻一点幽默</td><td>挑眉；说“whole face”时指脸</td></tr>
+        <tr><td>06</td><td>Shen Wenyu</td><td class="t">2:40–3:42</td><td>慢</td><td>中</td><td>克制、深情</td><td>说“pianist's pianist”前看观众</td></tr>
+        <tr><td>07</td><td>Closing</td><td class="t">3:42–4:10</td><td>慢</td><td>中</td><td>坚定</td><td>说完 Thank you 完全停住</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px">表里的时间只算讲话，不含视频；视频总计约 50 秒。</p>
+  </section>
+
+  <section>
+    <h3>50s video budget · 视频怎么分</h3>
+    <table class="map">
+      <thead><tr><th>Page</th><th>What to show</th><th>Length</th></tr></thead>
+      <tbody>
+        <tr><td>Slide 2</td><td>榔头/琴弦机制，或沈文裕俯拍</td><td class="t">10s</td></tr>
+        <tr><td>Slide 3</td><td>贝多芬：力度、砸弦</td><td class="t">8s</td></tr>
+        <tr><td>Slide 4</td><td>阿格里奇：快速、自由</td><td class="t">8s</td></tr>
+        <tr><td>Slide 5</td><td>郎朗：肢体、舞台</td><td class="t">10s</td></tr>
+        <tr><td>Slide 6</td><td>沈文裕：拉三，技术</td><td class="t">14s</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px">如果只放一整段 50 秒，放在沈文裕页最稳；分成五段就按上面的预算。</p>
+  </section>
+
+  <div id="script">
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">01</span><h2>Opening</h2><span class="time">0:00–0:18 · Slide 1</span></div>
+      <p class="line">Good morning, everyone. <span class="p">/</span> My name is <b>Ma Mingyu</b>. <span class="pp">//</span></p>
+      <p class="line">Today I want to talk about the piano — <span class="p">/</span> <b>differently</b>. <span class="pp">//</span></p>
+      <p class="line">I'll show you <b>four pianists</b>, <span class="p">/</span> and four different ways to press <b>the same key</b>. <span class="pp">//</span></p>
+      <p class="note">中速。前两句看观众。“four pianists”抬手指数；“the same key”放慢，停一拍再翻页。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">02</span><h2>The instrument</h2><span class="time">0:18–0:55 · Slide 2</span></div>
+      <p class="line">Here is a <b>surprising</b> fact: <span class="p">/</span> the piano is a <b>percussion</b> instrument. <span class="pp">//</span></p>
+      <p class="line">When I press a key, <span class="p">/</span> I do <b>not</b> touch a string. <span class="p">/</span> I move a small <b>hammer</b>. <span class="pp">//</span></p>
+      <p class="line">The hammer hits a string, <span class="p">/</span> and the string <b>sings</b>. <span class="pp">//</span></p>
+      <p class="line"><span class="tag">VIDEO ~10s</span> <span class="p">/</span> <span class="pp">//</span></p>
+      <p class="line">Eighty-eight keys. <span class="p">/</span> <b>One machine</b>. <span class="pp">//</span></p>
+      <p class="line">But the machine is <b>not</b> the music. <span class="p">/</span> The music is in <b>how you press</b>. <span class="pp">//</span></p>
+      <p class="note">说“hammer”时指屏幕。视频播放时退后半步，让观众看，不要说话。“One machine”压低音量；最后一句放慢。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">03</span><h2>Beethoven</h2><span class="time">0:55–1:30 · Slide 3</span></div>
+      <p class="line">The first pianist is <b>Beethoven</b>. <span class="pp">//</span></p>
+      <p class="line">He was famous as an <b>improviser</b> <span class="p">/</span> before he was famous as a <b>composer</b>. <span class="pp">//</span></p>
+      <p class="line">He played with such <b>force</b> <span class="p">/</span> that he <b>broke strings</b>. <span class="pp">//</span></p>
+      <p class="line">When he lost his hearing, <span class="p">/</span> he did <b>not</b> stop. <span class="pp">//</span></p>
+      <p class="line">He kept writing music <span class="p">/</span> he could <b>no longer hear</b>. <span class="pp">//</span></p>
+      <p class="line">His music is a man hitting the piano <span class="p">/</span> and <b>refusing to apologize</b>. <span class="pp">//</span></p>
+      <p class="line">For Beethoven, <span class="p">/</span> the key is a <b>weapon</b>. <span class="fall">↘</span> <span class="pp">//</span></p>
+      <p class="note">“broke strings”加重；“no longer hear”放慢并停一拍；“weapon”不要喊，咬清楚、往下落。如果这页放视频，说完 weapon 后停 8 秒。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">04</span><h2>Argerich</h2><span class="time">1:30–2:05 · Slide 4</span></div>
+      <p class="line">Second, <b>Martha Argerich</b>. <span class="pp">//</span></p>
+      <p class="line">She won the Chopin Competition in 1965. <span class="pp">//</span></p>
+      <p class="line">She still plays <b>live</b> <span class="p">/</span> as if it were the <b>first time</b>. <span class="pp">//</span></p>
+      <p class="line">Her <b>tempo</b> can change in a second. <span class="p">/</span> Her volume can go from a <b>whisper</b> <span class="p">/</span> to an <b>explosion</b>. <span class="pp">//</span></p>
+      <p class="line">You never know what she will do next — <span class="p">/</span> and that is why people <b>buy tickets</b>. <span class="pp">//</span></p>
+      <p class="line">She is not trying to be perfect. <span class="p">/</span> She is trying to be <b>alive</b>. <span class="pp">//</span></p>
+      <p class="line">For Argerich, <span class="p">/</span> the key is <b>electricity</b>. <span class="fall">↘</span> <span class="pp">//</span></p>
+      <p class="note">中段稍微加速，制造“不可预测”。说“whisper”时真的小声；“explosion”放开；“alive”放慢、加重。如果这页放视频，说完 electricity 后停 8 秒。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">05</span><h2>Lang Lang</h2><span class="time">2:05–2:40 · Slide 5</span></div>
+      <p class="line">Third, <b>Lang Lang</b>. <span class="pp">//</span></p>
+      <p class="line">In 1999, <span class="p">/</span> he was seventeen. <span class="pp">//</span></p>
+      <p class="line">A famous pianist was sick, <span class="p">/</span> so he stepped in <span class="p">/</span> at the Ravinia Festival — <span class="p">/</span> <b>that night</b>. <span class="pp">//</span></p>
+      <p class="line">That night, <span class="p">/</span> he became a <b>star</b>. <span class="pp">//</span></p>
+      <p class="line">Lang Lang plays with his <b>whole body</b> <span class="p">/</span> and his <b>whole face</b>. <span class="pp">//</span></p>
+      <p class="line">But he brought classical music <span class="p">/</span> to people who had never bought a ticket. <span class="pp">//</span></p>
+      <p class="line">For Lang Lang, <span class="p">/</span> the key is <b>theater</b>. <span class="fall">↘</span> <span class="pp">//</span></p>
+      <p class="note">故事部分稍快，像讲八卦。“that night”上扬；说“whole body / whole face”时用手比一下。如果这页放视频，说完 theater 后停 10 秒。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">06</span><h2>Shen Wenyu</h2><span class="time">2:40–3:42 · Slide 6</span></div>
+      <p class="line"><span class="tag">slow</span> Finally, <b>Shen Wenyu</b>. <span class="pp">//</span></p>
+      <p class="line">He was born in Chongqing in 1986 — <span class="p">/</span> and he is why I wanted to give this talk. <span class="pp">//</span></p>
+      <p class="line">At sixteen, <span class="p">/</span> he won second prize <span class="p">/</span> at the Queen Elisabeth Competition <span class="p">/</span> in Belgium. <span class="pp">//</span></p>
+      <p class="line">At eighteen, <span class="p">/</span> he won first prize <span class="p">/</span> at the Rachmaninoff Competition <span class="p">/</span> in Los Angeles. <span class="pp">//</span></p>
+      <p class="line">His playing is not about <b>show</b>. <span class="p">/</span> It is about <b>control</b> — <span class="p">/</span> and <b>precision</b>. <span class="pp">//</span></p>
+      <p class="line">Every note in its place, <span class="p">/</span> at a speed that seems <b>impossible</b>. <span class="pp">//</span></p>
+      <p class="line">He is less famous than Lang Lang. <span class="p">/</span> I think he is <b>underrated</b>. <span class="pp">//</span></p>
+      <p class="line">I call him <span class="p">/</span> <b>the pianist's pianist</b>. <span class="pp">//</span></p>
+      <p class="line">For Shen Wenyu, <span class="p">/</span> the key is <b>precision</b>. <span class="p">/</span> And for me, <span class="p">/</span> that precision <b>moves me the most</b>. <span class="fall">↘</span> <span class="pp">//</span></p>
+      <p class="note">全场最慢。两场比赛的年份和名次说清楚，但不要赶。说“pianist's pianist”前停一拍，并且看着观众，不要看屏幕。如果这页放视频，最后停 14 秒。</p>
+    </section>
+
+    <section class="beat">
+      <div class="beat-head"><span class="no">07</span><h2>Closing</h2><span class="time">3:42–4:10 · Slide 7</span></div>
+      <p class="line">So: <span class="p">/</span> Beethoven uses the piano as a <b>weapon</b>. <span class="p">/</span> Argerich as <b>electricity</b>. <span class="p">/</span> Lang Lang as <b>theater</b>. <span class="p">/</span> Shen Wenyu as <b>precision</b>. <span class="pp">//</span></p>
+      <p class="line">Four people. <span class="p">/</span> One instrument. <span class="pp">//</span></p>
+      <p class="line">The piano has eighty-eight keys — <span class="p">/</span> but it does <b>not</b> have one sound. <span class="pp">//</span></p>
+      <p class="line"><b>No two people</b> <span class="p">/</span> <b>press them</b> <span class="p">/</span> <b>the same way</b>. <span class="fall">↘</span> <span class="pp">//</span></p>
+      <p class="line">Thank you. <span class="pp">//</span></p>
+      <p class="note">四个名字各停一拍。最后一句一字一顿。说完“Thank you”完全停住，不要补话，等主持人或老师接。</p>
+    </section>
+
+  </div>
+
+  <section>
+    <h3>Pronunciation · 人名与曲名</h3>
+    <table>
+      <thead><tr><th>Word</th><th>Say it</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Beethoven</td><td class="t">BAY-toe-ven</td><td>重音在第一音节</td></tr>
+        <tr><td>Argerich</td><td class="t">AR-guh-rich</td><td>不要读成“阿格里奇”的拼音</td></tr>
+        <tr><td>Lang Lang</td><td class="t">Lang Lang</td><td>两个都重读，短促</td></tr>
+        <tr><td>Shen Wenyu</td><td class="t">Shen Wen-yoo</td><td>“Wen”轻，“yu”拉长</td></tr>
+        <tr><td>Hammerklavier</td><td class="t">HAM-mer-kla-veer</td><td>德语曲名</td></tr>
+        <tr><td>Rachmaninoff</td><td class="t">rakh-MAH-nee-nof</td><td>重音在 MAH</td></tr>
+        <tr><td>Queen Elisabeth</td><td class="t">Queen eh-LEEZ-ah-beth</td><td>比利时比赛</td></tr>
+        <tr><td>Ravinia</td><td class="t">rah-VIN-ee-ah</td><td>美国音乐节</td></tr>
+        <tr><td>Chopin</td><td class="t">SHOH-pan</td><td>不要读“Cho-pin”</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>If you run out of time · 还超时删这些</h3>
+    <div class="box">
+      <ol>
+        <li>Argerich: “She won the Chopin Competition in 1965.”（约 7 秒）</li>
+        <li>Lang Lang: “In 1999, he was seventeen.”（约 4 秒）</li>
+        <li>Closing: “Four people. One instrument.”（约 3 秒）</li>
+      </ol>
+      <p class="note" style="margin-bottom:0">按这个顺序删，主线“四个人、四种按键方式”不会散。</p>
+    </div>
+  </section>
+
+  <section class="qa">
+    <h3>Q&amp;A · 三个最可能的问题</h3>
+    <p><strong>Why Shen Wenyu?</strong><br>Because his playing is honest. No show — just control. And I think he is underrated.</p>
+    <p><strong>Is the piano a percussion or string instrument?</strong><br>Both. The sound comes from strings, but a hammer hits them. So we play it like percussion.</p>
+    <p><strong>Why these four?</strong><br>I wanted four different ways to press one key — not a list of the top four.</p>
+  </section>
+
+  <footer>
+    <span>Ma Mingyu · One Key, Four Worlds</span>
+    <span>Images: author's own · Facts checked</span>
+  </footer>
+
+</main>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  // ---- rehearsal timer (wall-clock based, survives screen lock) ----
+  const TOTAL = 300;
+  const STORE = 'okfw-state';
+  let endAt = 0, remain = TOTAL, timer = null, wakeLock = null;
+  const clock = document.getElementById('clock');
+  const timerBtn = document.getElementById('timerBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const timeFill = document.getElementById('timeFill');
+  const toggleBtn = document.getElementById('toggleBtn');
+
+  function fmt(s){
+    const m = Math.floor(Math.max(0,s)/60);
+    const r = Math.max(0,s)%60;
+    return m + ':' + String(r).padStart(2,'0');
+  }
+  function paint(){
+    clock.textContent = fmt(remain);
+    const low = remain <= 30;
+    clock.style.color = low ? '#e06c5a' : '#c69a5e';
+    timeFill.style.width = (Math.max(0, remain) / TOTAL * 100) + '%';
+    timeFill.style.background = low ? '#e06c5a' : '#c69a5e';
+  }
+  function save(){
+    try{
+      localStorage.setItem(STORE, JSON.stringify({
+        endAt, remain,
+        running: !!timer,
+        clean: document.body.classList.contains('clean')
+      }));
+    }catch(e){}
+  }
+  function tick(){
+    remain = endAt ? Math.max(0, Math.ceil((endAt - Date.now()) / 1000)) : remain;
+    paint();
+    if (endAt && remain <= 0) stopTimer();
+  }
+  function startTimer(){
+    endAt = Date.now() + remain * 1000;
+    timer = setInterval(tick, 250);
+    timerBtn.textContent = '❚❚ 暂停';
+    keepAwake(true);
+    tick(); save();
+  }
+  function stopTimer(){
+    clearInterval(timer); timer = null; endAt = 0;
+    timerBtn.textContent = remain > 0 ? '▶ 继续' : '▶ 5:00 计时';
+    keepAwake(false);
+    tick(); save();
+  }
+  async function keepAwake(on){
+    try{
+      if(on && 'wakeLock' in navigator){
+        if(!wakeLock) wakeLock = await navigator.wakeLock.request('screen');
+      }else if(!on && wakeLock){
+        await wakeLock.release(); wakeLock = null;
+      }
+    }catch(e){}
+  }
+  timerBtn.addEventListener('click', () => {
+    if (timer) stopTimer();
+    else {
+      if (remain <= 0) remain = TOTAL;
+      startTimer();
+    }
+  });
+  resetBtn.addEventListener('click', () => {
+    clearInterval(timer); timer = null; endAt = 0; remain = TOTAL;
+    timerBtn.textContent = '▶ 5:00 计时';
+    paint(); save();
+  });
+
+  // ---- hide annotations ----
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('clean');
+    toggleBtn.textContent = document.body.classList.contains('clean') ? '显示标注' : '隐藏标注';
+    save();
+  });
+
+  // ---- restore last state ----
+  try{
+    const s = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (s){
+      if (s.clean){
+        document.body.classList.add('clean');
+        toggleBtn.textContent = '显示标注';
+      }
+      remain = Number.isFinite(s.remain) ? s.remain : TOTAL;
+      if (s.running && s.endAt > Date.now()){
+        endAt = s.endAt;
+        remain = Math.ceil((endAt - Date.now()) / 1000);
+        if (remain > 0){
+          timer = setInterval(tick, 250);
+          timerBtn.textContent = '❚❚ 暂停';
+          keepAwake(true);
+        }
+      }
+    }
+  }catch(e){}
+  paint();
+
+  // ---- scroll progress ----
+  const scrollbar = document.getElementById('scrollbar');
+  function onScroll(){
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    scrollbar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // ---- reveal on scroll ----
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+
+  document.querySelectorAll('header, section').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  // ---- offline support ----
+  const secure = location.protocol === 'https:' ||
+    ['localhost', '127.0.0.1'].includes(location.hostname);
+  if ('serviceWorker' in navigator && secure){
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
